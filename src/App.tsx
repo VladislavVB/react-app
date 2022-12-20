@@ -1,12 +1,20 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 // import logo from './logo.svg';
 import "./App.css";
+import { HomePage } from "./pages/HomePage";
+import { Favorites } from "./pages/FavoritesPage";
+import { Navigation } from "./components/Navigations";
 
 function App() {
   return (
-    <div>
-      <h1 className="font-bold">Hellow React</h1>
-    </div>
+    <>
+    <Navigation/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/favorites" element={<Favorites />} />
+      </Routes>
+    </>
   );
 }
 
